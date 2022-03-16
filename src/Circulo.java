@@ -1,5 +1,5 @@
 import java.lang.Math;
-public class Circulo extends Figura implements Comparable<Circulo> {
+public class Circulo extends Figura implements Comparable<Figura> {
     private double radio;
     private double pi = 3.1416;
     private int lados=1;
@@ -13,11 +13,12 @@ public class Circulo extends Figura implements Comparable<Circulo> {
     public int getLados(){
         return lados;
     }
-    public int compareTo(Circulo pcirComparar){
+    @Override
+    public int compareTo(Figura pfigComparar){
         double miArea = this.calcularArea();
-        double areaComparar = pcirComparar.calcularArea();
+        double areaComparar = pfigComparar.calcularArea();
 
-        if (miArea == areaComparar && this.getLados() == pcirComparar.getLados()){
+        if (miArea == areaComparar && this.getLados() == pfigComparar.getLados()){
             return 0;
         }
         else if (miArea > areaComparar){

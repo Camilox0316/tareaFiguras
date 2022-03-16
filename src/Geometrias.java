@@ -7,5 +7,8 @@ public class Geometrias {
         rects[2] = new Rectangulo(2.8, 3.1);
         rects[3] = new Rectangulo(3.5, 1.2);
         Arrays.sort(rects);
+        for (int i=0;i<4;i++){
+            System.out.println(rects[1].compareTo(rects[i]));
+        }
     }
 }

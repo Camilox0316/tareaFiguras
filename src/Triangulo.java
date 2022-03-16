@@ -1,4 +1,4 @@
-public class Triangulo extends Figura implements Comparable<Triangulo>{
+public class Triangulo extends Figura implements Comparable<Figura>{
     private double base;
     private double altura;
     private int lados=3;
@@ -13,11 +13,12 @@ public class Triangulo extends Figura implements Comparable<Triangulo>{
     public int getLados(){
         return lados;
     }
-    public int compareTo(Triangulo triComparar){
+    @Override
+    public int compareTo(Figura figComparar){
         double miArea = this.calcularArea();
-        double areaComparar = triComparar.calcularArea();
+        double areaComparar = figComparar.calcularArea();
 
-        if (miArea == areaComparar && this.getLados() == triComparar.getLados()){
+        if (miArea == areaComparar && this.getLados() == figComparar.getLados()){
             return 0;
         }
         else if (miArea > areaComparar){
